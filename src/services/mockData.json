@@ -1,0 +1,485 @@
+[
+    {
+        "id": "1",
+        "name": "Bazina",
+        "symbol": "BAZINA",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Bazina",
+        "price": 0.00000528,
+        "marketCap": 5280,
+        "volume": 1000,
+        "status": "New Pairs",
+        "createdAt": 1700430000000,
+        "socials": {
+            "twitter": "https://twitter.com",
+            "telegram": "https://t.me"
+        },
+        "holders": 157,
+        "transactions": 51,
+        "changes": {
+            "m5": 15,
+            "h1": 3,
+            "h6": 12
+        },
+        "liquidity": 2000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "2",
+        "name": "YoungMen",
+        "symbol": "YM",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=YM",
+        "price": 0.00000462,
+        "marketCap": 4620,
+        "volume": 577,
+        "status": "New Pairs",
+        "createdAt": 1700429000000,
+        "socials": {
+            "website": "https://example.com"
+        },
+        "holders": 70,
+        "transactions": 20,
+        "changes": {
+            "m5": -11,
+            "h1": 10,
+            "h6": -5
+        },
+        "liquidity": 1500,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "10",
+        "name": "MoonDog",
+        "symbol": "MDOG",
+        "image": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Dog",
+        "price": 0.00000312,
+        "marketCap": 3120,
+        "volume": 850,
+        "status": "New Pairs",
+        "createdAt": 1700431000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 89,
+        "transactions": 45,
+        "changes": {
+            "m5": 8,
+            "h1": 25,
+            "h6": 18
+        },
+        "liquidity": 1800,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "11",
+        "name": "SafeMoon V3",
+        "symbol": "SAFEV3",
+        "image": "https://api.dicebear.com/7.x/shapes/svg?seed=Moon",
+        "price": 0.00000789,
+        "marketCap": 7890,
+        "volume": 1200,
+        "status": "New Pairs",
+        "createdAt": 1700432000000,
+        "socials": {
+            "telegram": "https://t.me",
+            "website": "https://example.com"
+        },
+        "holders": 234,
+        "transactions": 67,
+        "changes": {
+            "m5": 22,
+            "h1": 15,
+            "h6": 30
+        },
+        "liquidity": 2500,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "12",
+        "name": "Pepe Coin",
+        "symbol": "PEPE2",
+        "image": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Pepe",
+        "price": 0.00000156,
+        "marketCap": 1560,
+        "volume": 450,
+        "status": "New Pairs",
+        "createdAt": 1700433000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 112,
+        "transactions": 38,
+        "changes": {
+            "m5": -5,
+            "h1": 8,
+            "h6": 2
+        },
+        "liquidity": 900,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "13",
+        "name": "Rocket Token",
+        "symbol": "RKT",
+        "image": "https://api.dicebear.com/7.x/shapes/svg?seed=Rocket",
+        "price": 0.00000899,
+        "marketCap": 8990,
+        "volume": 1500,
+        "status": "New Pairs",
+        "createdAt": 1700434000000,
+        "socials": {
+            "telegram": "https://t.me"
+        },
+        "holders": 178,
+        "transactions": 56,
+        "changes": {
+            "m5": 12,
+            "h1": 7,
+            "h6": 20
+        },
+        "liquidity": 3000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "3",
+        "name": "Multi-Tx Max",
+        "symbol": "MTXMAX",
+        "image": "https://api.dicebear.com/7.x/shapes/svg?seedMTXMAX",
+        "price": 0.001504,
+        "marketCap": 1504,
+        "volume": 1000,
+        "status": "Final Stretch",
+        "createdAt": 1700425000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 101,
+        "transactions": 22,
+        "changes": {
+            "m5": 44,
+            "h1": 0,
+            "h6": 69
+        },
+        "liquidity": 5000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "4",
+        "name": "Chimp",
+        "symbol": "CHIMP",
+        "image": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Chimp",
+        "price": 0.000688,
+        "marketCap": 688.9,
+        "volume": 0,
+        "status": "Final Stretch",
+        "createdAt": 1700400000000,
+        "socials": {},
+        "holders": 11,
+        "transactions": 1,
+        "changes": {
+            "m5": 0,
+            "h1": 0,
+            "h6": 0
+        },
+        "liquidity": 1000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "7",
+        "name": "Frog Glow",
+        "symbol": "FGLO",
+        "image": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Frog",
+        "price": 0.00124,
+        "marketCap": 1240000,
+        "volume": 26000,
+        "status": "Final Stretch",
+        "createdAt": 1700428000000,
+        "socials": {
+            "telegram": "https://t.me"
+        },
+        "holders": 2065,
+        "transactions": 134,
+        "changes": {
+            "m5": 20,
+            "h1": 13,
+            "h6": 20
+        },
+        "liquidity": 50000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "14",
+        "name": "Diamond Hands",
+        "symbol": "DHAND",
+        "image": "https://api.dicebear.com/7.x/shapes/svg?seed=Diamond",
+        "price": 0.00234,
+        "marketCap": 234000,
+        "volume": 8000,
+        "status": "Final Stretch",
+        "createdAt": 1700420000000,
+        "socials": {
+            "twitter": "https://twitter.com",
+            "website": "https://example.com"
+        },
+        "holders": 456,
+        "transactions": 89,
+        "changes": {
+            "m5": 5,
+            "h1": 12,
+            "h6": 18
+        },
+        "liquidity": 15000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "15",
+        "name": "ShibaSwap",
+        "symbol": "SSWAP",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Shiba",
+        "price": 0.00156,
+        "marketCap": 156000,
+        "volume": 5500,
+        "status": "Final Stretch",
+        "createdAt": 1700415000000,
+        "socials": {
+            "telegram": "https://t.me"
+        },
+        "holders": 678,
+        "transactions": 123,
+        "changes": {
+            "m5": 3,
+            "h1": 8,
+            "h6": 15
+        },
+        "liquidity": 18000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "16",
+        "name": "Luna Classic",
+        "symbol": "LUNC2",
+        "image": "https://api.dicebear.com/7.x/shapes/svg?seed=Luna",
+        "price": 0.00345,
+        "marketCap": 345000,
+        "volume": 12000,
+        "status": "Final Stretch",
+        "createdAt": 1700410000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 890,
+        "transactions": 156,
+        "changes": {
+            "m5": -2,
+            "h1": 5,
+            "h6": 10
+        },
+        "liquidity": 25000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "5",
+        "name": "Crack Head Barbie",
+        "symbol": "METHANY",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Methany",
+        "price": 0.0247,
+        "marketCap": 24700,
+        "volume": 12000,
+        "status": "Migrated",
+        "createdAt": 1700000000000,
+        "socials": {
+            "twitter": "https://twitter.com",
+            "telegram": "https://t.me"
+        },
+        "holders": 169,
+        "transactions": 51,
+        "changes": {
+            "m5": 6,
+            "h1": 50,
+            "h6": 44
+        },
+        "liquidity": 10000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "6",
+        "name": "PVP THE TRENCHES",
+        "symbol": "PVP",
+        "image": "https://api.dicebear.com/7.x/pixel-art/svg?seed=PVP",
+        "price": 0.000041,
+        "marketCap": 41,
+        "volume": 13000,
+        "status": "Migrated",
+        "createdAt": 1699000000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 12,
+        "transactions": 5,
+        "changes": {
+            "m5": 0,
+            "h1": 0,
+            "h6": 0
+        },
+        "liquidity": 500,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "8",
+        "name": "Ea Nasir",
+        "symbol": "Nasir",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Nasir",
+        "price": 0.0254,
+        "marketCap": 25400,
+        "volume": 13000,
+        "status": "Migrated",
+        "createdAt": 1698000000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 158,
+        "transactions": 36,
+        "changes": {
+            "m5": 0,
+            "h1": 0,
+            "h6": 0
+        },
+        "liquidity": 8000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "9",
+        "name": "ZCash",
+        "symbol": "ZEC",
+        "image": "https://api.dicebear.com/7.x/initials/svg?seed=ZEC",
+        "price": 0.749,
+        "marketCap": 749000,
+        "volume": 6000,
+        "status": "Migrated",
+        "createdAt": 1697000000000,
+        "socials": {
+            "website": "https://z.cash"
+        },
+        "holders": 1,
+        "transactions": 0,
+        "changes": {
+            "m5": 0,
+            "h1": 16,
+            "h6": 0
+        },
+        "liquidity": 100000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "17",
+        "name": "Bonk Inu",
+        "symbol": "BONK",
+        "image": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Bonk",
+        "price": 0.128,
+        "marketCap": 1280000,
+        "volume": 45000,
+        "status": "Migrated",
+        "createdAt": 1696000000000,
+        "socials": {
+            "twitter": "https://twitter.com",
+            "telegram": "https://t.me"
+        },
+        "holders": 3456,
+        "transactions": 678,
+        "changes": {
+            "m5": 2,
+            "h1": 18,
+            "h6": 25
+        },
+        "liquidity": 250000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "18",
+        "name": "Floki Mars",
+        "symbol": "FLOKM",
+        "image": "https://api.dicebear.com/7.x/avataaars/svg?seed=Floki",
+        "price": 0.0567,
+        "marketCap": 567000,
+        "volume": 28000,
+        "status": "Migrated",
+        "createdAt": 1695000000000,
+        "socials": {
+            "website": "https://example.com"
+        },
+        "holders": 1234,
+        "transactions": 234,
+        "changes": {
+            "m5": 1,
+            "h1": 12,
+            "h6": 20
+        },
+        "liquidity": 120000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "19",
+        "name": "Ape Together",
+        "symbol": "APE",
+        "image": "https://api.dicebear.com/7.x/pixel-art/svg?seed=Ape",
+        "price": 0.234,
+        "marketCap": 2340000,
+        "volume": 67000,
+        "status": "Migrated",
+        "createdAt": 1694000000000,
+        "socials": {
+            "twitter": "https://twitter.com"
+        },
+        "holders": 5678,
+        "transactions": 890,
+        "changes": {
+            "m5": -1,
+            "h1": 8,
+            "h6": 15
+        },
+        "liquidity": 450000,
+        "buyTax": 0,
+        "sellTax": 0
+    },
+    {
+        "id": "20",
+        "name": "Baby Doge",
+        "symbol": "BABYD",
+        "image": "https://api.dicebear.com/7.x/fun-emoji/svg?seed=Baby",
+        "price": 0.089,
+        "marketCap": 890000,
+        "volume": 34000,
+        "status": "Migrated",
+        "createdAt": 1693000000000,
+        "socials": {
+            "telegram": "https://t.me"
+        },
+        "holders": 2345,
+        "transactions": 456,
+        "changes": {
+            "m5": 3,
+            "h1": 14,
+            "h6": 22
+        },
+        "liquidity": 180000,
+        "buyTax": 0,
+        "sellTax": 0
+    }
+]
