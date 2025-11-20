@@ -33,24 +33,257 @@ A pixel-perfect replica of Axiom Trade's "Pulse" token discovery board, built wi
 - **Icons**: Lucide React
 - **Images**: DiceBear API for avatars
 
-## Quick Start
+## Installation Guide
 
-1.  **Install Dependencies**:
-    ```bash
-    npm install
-    ```
+### Prerequisites
 
-2.  **Run Development Server**:
-    ```bash
-    npm run dev
-    ```
-    Open [http://localhost:3000](http://localhost:3000) to view the app.
+- **Node.js**: Version 18.17 or higher
+- **npm** or **yarn** or **pnpm**
 
-3.  **Build for Production**:
-    ```bash
-    npm run build
-    npm start
-    ```
+Check your versions:
+```bash
+node --version  # Should be 18.17+
+npm --version   # Should be 9.0+
+```
+
+### Step 1: Clone the Repository
+
+```bash
+git clone https://github.com/rohith1005H/axiom-replica.git
+cd axiom-replica
+```
+
+### Step 2: Install Dependencies
+
+#### All-in-One Installation
+```bash
+npm install
+```
+
+This will install all dependencies listed below.
+
+#### Manual Installation (Step-by-Step)
+
+If you prefer to understand what's being installed, here's the breakdown:
+
+**1. Core Framework**
+```bash
+# Next.js 14 with React 18
+npm install next@14.2.33 react@18 react-dom@18
+```
+- `next`: Next.js framework for React applications
+- `react`: JavaScript library for building user interfaces
+- `react-dom`: React package for DOM rendering
+
+**2. TypeScript**
+```bash
+# TypeScript and type definitions
+npm install --save-dev typescript @types/node @types/react @types/react-dom
+```
+- `typescript`: TypeScript compiler
+- `@types/node`: Type definitions for Node.js
+- `@types/react`: Type definitions for React
+- `@types/react-dom`: Type definitions for React DOM
+
+**3. State Management**
+```bash
+# Redux Toolkit for state management
+npm install @reduxjs/toolkit react-redux
+
+# React Query for server state and caching
+npm install @tanstack/react-query
+```
+- `@reduxjs/toolkit`: Official Redux toolset with best practices
+- `react-redux`: Official React bindings for Redux
+- `@tanstack/react-query`: Data fetching and caching library
+
+**4. Styling**
+```bash
+# Tailwind CSS and dependencies
+npm install tailwindcss postcss autoprefixer
+
+# Tailwind CSS utilities
+npm install tailwindcss-animate class-variance-authority
+
+# Utility for merging class names
+npm install clsx tailwind-merge
+```
+- `tailwindcss`: Utility-first CSS framework
+- `postcss`: CSS transformation tool
+- `autoprefixer`: Adds vendor prefixes to CSS
+- `tailwindcss-animate`: Tailwind CSS plugin for animations
+- `class-variance-authority`: Type-safe variant APIs
+- `clsx`: Utility for constructing class names
+- `tailwind-merge`: Intelligently merges Tailwind CSS classes
+
+**5. UI Components (Radix UI)**
+```bash
+# Radix UI primitives (used by shadcn/ui)
+npm install @radix-ui/react-dialog
+npm install @radix-ui/react-dropdown-menu
+npm install @radix-ui/react-popover
+npm install @radix-ui/react-tooltip
+npm install @radix-ui/react-hover-card
+npm install @radix-ui/react-tabs
+npm install @radix-ui/react-slot
+```
+- All `@radix-ui` packages: Unstyled, accessible UI primitives
+
+**6. Icons**
+```bash
+# Lucide React icons
+npm install lucide-react
+```
+- `lucide-react`: Beautiful and consistent icon pack
+
+**7. Utilities**
+```bash
+# HTTP client
+npm install axios
+```
+- `axios`: Promise-based HTTP client (used for data fetching)
+
+**8. Development Tools**
+```bash
+# ESLint for code quality
+npm install --save-dev eslint eslint-config-next
+
+# Tailwind CSS configuration
+npx tailwindcss init -p
+```
+- `eslint`: JavaScript linter
+- `eslint-config-next`: ESLint configuration for Next.js
+
+### Step 3: Install shadcn/ui Components
+
+The UI components are from shadcn/ui. Install them one by one:
+
+```bash
+# Initialize shadcn/ui (if not already done)
+npx shadcn@latest init
+
+# Install individual components
+npx shadcn@latest add button
+npx shadcn@latest add dialog
+npx shadcn@latest add dropdown-menu
+npx shadcn@latest add input
+npx shadcn@latest add popover
+npx shadcn@latest add tooltip
+npx shadcn@latest add hover-card
+npx shadcn@latest add skeleton
+npx shadcn@latest add table
+npx shadcn@latest add tabs
+```
+
+Each command will:
+- Add the component to `src/components/ui/`
+- Install any missing dependencies
+- Update your `components.json` config
+
+### Step 4: Verify Installation
+
+Check that everything is installed correctly:
+
+```bash
+# Check package.json
+cat package.json
+
+# Verify all dependencies
+npm list --depth=0
+```
+
+### Step 5: Run the Application
+
+**Development Mode:**
+```bash
+npm run dev
+```
+Opens at [http://localhost:3000](http://localhost:3000)
+
+**Production Build:**
+```bash
+npm run build
+npm start
+```
+
+## Complete Dependency List
+
+### Production Dependencies
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `next` | 14.2.33 | Next.js framework |
+| `react` | ^18 | React library |
+| `react-dom` | ^18 | React DOM rendering |
+| `@reduxjs/toolkit` | ^2.0 | Redux state management |
+| `react-redux` | ^9.0 | React-Redux bindings |
+| `@tanstack/react-query` | ^5.0 | Data fetching/caching |
+| `axios` | ^1.6 | HTTP client |
+| `tailwindcss` | ^3.4 | CSS framework |
+| `tailwindcss-animate` | ^1.0 | Tailwind animations |
+| `class-variance-authority` | ^0.7 | Variant APIs |
+| `clsx` | ^2.1 | Class name utility |
+| `tailwind-merge` | ^2.2 | Tailwind merger |
+| `lucide-react` | ^0.344 | Icon library |
+| `@radix-ui/react-dialog` | ^1.0 | Dialog primitive |
+| `@radix-ui/react-dropdown-menu` | ^2.0 | Dropdown primitive |
+| `@radix-ui/react-popover` | ^1.0 | Popover primitive |
+| `@radix-ui/react-tooltip` | ^1.0 | Tooltip primitive |
+| `@radix-ui/react-hover-card` | ^1.0 | Hover card primitive |
+| `@radix-ui/react-tabs` | ^1.0 | Tabs primitive |
+| `@radix-ui/react-slot` | ^1.0 | Slot primitive |
+
+### Development Dependencies
+| Package | Version | Purpose |
+|---------|---------|---------|
+| `typescript` | ^5 | TypeScript compiler |
+| `@types/node` | ^20 | Node.js types |
+| `@types/react` | ^18 | React types |
+| `@types/react-dom` | ^18 | React DOM types |
+| `eslint` | ^8 | Code linter |
+| `eslint-config-next` | 14.2.33 | Next.js ESLint config |
+| `postcss` | ^8 | CSS processor |
+| `autoprefixer` | ^10 | CSS autoprefixer |
+
+## Troubleshooting
+
+### Common Issues
+
+**1. Node version too old**
+```bash
+# Update Node.js using nvm
+nvm install 18
+nvm use 18
+```
+
+**2. Permission errors**
+```bash
+# Use sudo (Linux/Mac) or run as administrator (Windows)
+sudo npm install
+```
+
+**3. Package conflicts**
+```bash
+# Clear cache and reinstall
+rm -rf node_modules package-lock.json
+npm cache clean --force
+npm install
+```
+
+**4. shadcn/ui components not installing**
+```bash
+# Make sure components.json exists
+npx shadcn@latest init
+
+# Then install components
+npx shadcn@latest add button
+```
+
+**5. Build errors**
+```bash
+# Clear Next.js cache
+rm -rf .next
+npm run build
+```
 
 ## Project Structure
 
