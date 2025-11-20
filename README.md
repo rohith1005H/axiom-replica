@@ -1,4 +1,4 @@
-# Axiom Pulse Replica
+# Axiom Replica
 
 A pixel-perfect replica of Axiom Trade's "Pulse" token discovery board, built with Next.js 14, TypeScript, Tailwind CSS, Redux Toolkit, and React Query.
 
@@ -12,12 +12,17 @@ A pixel-perfect replica of Axiom Trade's "Pulse" token discovery board, built wi
   - Name, symbol, and social links (Twitter, Telegram, Website)
   - Time since creation
   - Market cap, volume, and price changes (5m, 1h, 6h)
-  - Interactive "Buy" button
+  - Interactive "Buy" button and favorite star
 - **Real-time Updates**: Simulated WebSocket updates with smooth transitions
+- **Trading System**: Buy/sell modal with balance validation and order tracking
+- **Wallet Management**: Instant deposits with quick buttons or custom amounts
+- **Profile & History**: Complete order history, favorites, and statistics
+- **Working Search**: Filter tokens by name or symbol
+- **Favorites System**: Star tokens to save them for quick access
 - **Color-Coded Metrics**: Green for positive changes, red for negative
-- **Atomic Design**: Modular component architecture (Atoms, Molecules, Organisms)
+- **Atomic Design**: Modular component architecture
 - **Performance**: Memoized components, optimized re-renders
-- **Responsive**: Fully responsive down to 320px width (columns stack on mobile)
+- **Responsive**: Fully responsive down to 320px width
 
 ## Tech Stack
 
@@ -28,7 +33,7 @@ A pixel-perfect replica of Axiom Trade's "Pulse" token discovery board, built wi
 - **Icons**: Lucide React
 - **Images**: DiceBear API for avatars
 
-## Setup Instructions
+## Quick Start
 
 1.  **Install Dependencies**:
     ```bash
@@ -47,35 +52,354 @@ A pixel-perfect replica of Axiom Trade's "Pulse" token discovery board, built wi
     npm start
     ```
 
+## Project Structure
+
+```
+axiom-replica/
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── layout.tsx          # Root layout with providers
+│   │   ├── page.tsx            # Main page with Navigation & PulseBoard
+│   │   └── globals.css         # Global styles and Tailwind imports
+│   │
+│   ├── components/             # UI Components (Atomic Design)
+│   │   ├── atoms/              # Basic building blocks
+│   │   │   ├── PriceCell.tsx        # Displays token price with flash animation
+│   │   │   ├── StatusBadge.tsx      # Status indicator (New/Final/Migrated)
+│   │   │   └── SkeletonRow.tsx      # Loading skeleton for tables
+│   │   │
+│   │   ├── molecules/          # Composite components
+│   │   │   ├── TokenCard.tsx        # Main token card with all details & interactions
+│   │   │   ├── BuySellModal.tsx     # Trading modal with buy/sell tabs
+│   │   │   ├── DepositModal.tsx     # Wallet deposit interface
+│   │   │   ├── ProfileModal.tsx     # User profile with orders/favorites/stats
+│   │   │   ├── FavoritesModal.tsx   # View all favorited tokens
+│   │   │   ├── SortableHeader.tsx   # Table header with sort functionality
+│   │   │   ├── ActionPopover.tsx    # Buy/Sell action menu
+│   │   │   ├── TokenHoverCard.tsx   # Hover info for tokens
+│   │   │   ├── TokenRow.tsx         # Table row (legacy, for old table view)
+│   │   │   └── FilterGroup.tsx      # Search & filter controls (legacy)
+│   │   │
+│   │   ├── organisms/          # Major sections
+│   │   │   ├── Navigation.tsx       # Top navigation bar with all controls
+│   │   │   ├── PulseBoard.tsx       # Main 3-column board orchestrator
+│   │   │   └── TokenColumn.tsx      # Column container for status groups
+│   │   │
+│   │   ├── providers/          # Context providers
+│   │   │   ├── StoreProvider.tsx    # Redux store provider
+│   │   │   └── QueryProvider.tsx    # React Query provider
+│   │   │
+│   │   └── ui/                 # shadcn/ui components
+│   │       ├── button.tsx           # Button component
+│   │       ├── dialog.tsx           # Modal dialog
+│   │       ├── dropdown-menu.tsx    # Dropdown menu
+│   │       ├── input.tsx            # Text input
+│   │       ├── tabs.tsx             # Tabbed interface
+│   │       ├── table.tsx            # Table components
+│   │       ├── popover.tsx          # Popover
+│   │       ├── tooltip.tsx          # Tooltip
+│   │       ├── hover-card.tsx       # Hover card
+│   │       └── skeleton.tsx         # Loading skeleton
+│   │
+│   ├── lib/                    # Utilities and configuration
+│   │   ├── redux/              # Redux state management
+│   │   │   ├── store.ts             # Redux store configuration
+│   │   │   ├── hooks.ts             # Typed Redux hooks
+│   │   │   └── slices/              # State slices
+│   │   │       ├── tableSlice.ts         # Table UI state (sort, filter, search)
+│   │   │       ├── socketSlice.ts        # WebSocket connection status
+│   │   │       ├── favoritesSlice.ts     # Favorited token IDs
+│   │   │       └── walletSlice.ts        # Wallet balance & order history
+│   │   │
+│   │   └── utils.ts            # Utility functions (cn for className merging)
+│   │
+│   ├── hooks/                  # Custom React hooks
+│   │   ├── useLiveTableData.ts      # Fetches & merges live data with filters
+│   │   └── useMockWebSocket.ts      # Simulates real-time WebSocket updates
+│   │
+│   ├── services/               # External services and data
+│   │   └── mockData.json            # 20 mock tokens with full details
+│   │
+│   └── types/                  # TypeScript type definitions
+│       └── index.ts                 # All app types (TokenData, Order, etc.)
+│
+├── public/                     # Static assets
+│   └── *.svg                   # Next.js default icons
+│
+├── Configuration Files
+├── .eslintrc.json              # ESLint configuration
+├── .gitignore                  # Git ignore patterns
+├── components.json             # shadcn/ui configuration
+├── next.config.mjs             # Next.js configuration
+├── package.json                # Dependencies and scripts
+├── postcss.config.mjs          # PostCSS configuration
+├── tailwind.config.ts          # Tailwind CSS configuration
+├── tsconfig.json               # TypeScript configuration
+└── README.md                   # This file
+```
+
+## Key Files Explained
+
+### Core Application
+
+#### `src/app/layout.tsx`
+Root layout that wraps the entire application. Configures:
+- Inter font from Google Fonts
+- Page metadata (title, description)
+- StoreProvider (Redux state)
+- QueryProvider (React Query)
+- Dark mode theme
+
+#### `src/app/page.tsx`
+Main application page that renders:
+- Navigation component (top bar)
+- PulseBoard component (3-column board)
+- Page title and description
+
+#### `src/app/globals.css`
+Global styles including:
+- Tailwind CSS imports
+- CSS variables for shadcn/ui dark theme
+- Custom scrollbar styles
+- Base styling resets
+
+### State Management (Redux)
+
+#### `src/lib/redux/store.ts`
+Configures the Redux store combining all slices:
+- `table`: UI state for sorting, filtering, searching
+- `socket`: WebSocket connection status
+- `favorites`: Array of favorited token IDs
+- `wallet`: Balance and order history
+
+#### `src/lib/redux/slices/tableSlice.ts`
+Manages table UI state:
+- `activeColumn`: Current sort column
+- `sortDirection`: Ascending or descending
+- `filterStatus`: Filter by token status
+- `searchQuery`: Search term for filtering tokens
+
+#### `src/lib/redux/slices/favoritesSlice.ts`
+Manages favorited tokens:
+- `favoriteIds`: Array of token IDs
+- `toggleFavorite`: Add/remove from favorites
+- `clearFavorites`: Remove all favorites
+
+#### `src/lib/redux/slices/walletSlice.ts`
+Manages wallet and trading:
+- `balance`: Current SOL balance
+- `orders`: Array of all buy/sell orders
+- `deposit`: Add funds to balance
+- `addOrder`: Record a new trade
+
+#### `src/lib/redux/slices/socketSlice.ts`
+Manages WebSocket connection:
+- `isConnected`: Connection status
+- `lastUpdate`: Timestamp of last update
+
+### Data & Types
+
+#### `src/types/index.ts`
+Defines all TypeScript types:
+- `TokenStatus`: 'New Pairs' | 'Final Stretch' | 'Migrated'
+- `TokenData`: Complete token information
+- `Order`: Trade order details
+- `WebSocketMessage`: Real-time update structure
+- `TableState`: UI state shape
+
+#### `src/services/mockData.json`
+Contains 20 mock tokens with:
+- Basic info (name, symbol, image)
+- Price and market data
+- Social links (Twitter, Telegram, Website)
+- Holder and transaction counts
+- Price changes (5m, 1h, 6h intervals)
+- Liquidity and tax information
+
+### Custom Hooks
+
+#### `src/hooks/useLiveTableData.ts`
+Main data hook that:
+- Fetches initial token data from JSON
+- Subscribes to WebSocket updates
+- Merges real-time changes
+- Applies search, filter, and sort
+- Returns processed token array
+
+#### `src/hooks/useMockWebSocket.ts`
+Simulates WebSocket connection:
+- Emits random price updates every second
+- Simulates status changes
+- Triggers Redux updates
+- Can be enabled/disabled
+
+### Components - Organisms
+
+#### `src/components/organisms/Navigation.tsx`
+Top navigation bar featuring:
+- Logo and menu links
+- Working search bar (filters tokens)
+- Chain selector dropdown (SOL/ETH)
+- Deposit button (opens modal)
+- Favorites icon with count badge
+- Notifications bell
+- Wallet balance display
+- Profile dropdown menu
+
+#### `src/components/organisms/PulseBoard.tsx`
+Main board orchestrator:
+- Fetches live token data
+- Groups tokens by status
+- Renders 3 TokenColumn components
+- Shows loading state
+
+#### `src/components/organisms/TokenColumn.tsx`
+Status-based column:
+- Receives tokens for one status
+- Shows column header with icon
+- Displays token count
+- Renders TokenCard for each token
+- Custom scrollbar styling
+
+### Components - Molecules
+
+#### `src/components/molecules/TokenCard.tsx`
+Rich token card featuring:
+- Token image with gradient background
+- Name, symbol, and creation time
+- Social media links (clickable icons)
+- Market cap and volume
+- Price changes with color coding
+- Always-visible favorite star
+- Buy button (opens trading modal)
+- Hover effects and transitions
+
+#### `src/components/molecules/BuySellModal.tsx`
+Trading interface with:
+- Tabbed layout (Buy/Sell)
+- Token info header with image
+- Current price display
+- User balance validation
+- SOL amount input
+- Token amount calculation
+- Quick amount buttons
+- Trade execution (creates orders)
+- Market stats footer
+
+#### `src/components/molecules/DepositModal.tsx`
+Wallet deposit interface:
+- Quick deposit buttons (1, 5, 10, 50 SOL)
+- Custom amount input
+- Instant deposit (no validation)
+- Updates balance immediately
+
+#### `src/components/molecules/ProfileModal.tsx`
+User profile with 3 tabs:
+- **Orders**: Complete trading history
+  - Buy/sell indicators
+  - Token details and amounts
+  - Timestamps
+- **Favorites**: All starred tokens
+- **Stats**: Trading statistics
+  - Total orders, favorites
+  - Buy/sell counts
+  - Wallet balance
+
+#### `src/components/molecules/FavoritesModal.tsx`
+Favorites viewer:
+- Lists all favorited tokens
+- Renders TokenCard for each
+- Empty state message
+- Scrollable list
+
+### Components - Atoms
+
+#### `src/components/atoms/PriceCell.tsx`
+Animated price display:
+- Shows token price
+- Flash animation on change (green/red)
+- Detects value changes
+- Smooth transitions
+
+#### `src/components/atoms/StatusBadge.tsx`
+Status indicator badge:
+- Color-coded by status
+- Blue: New Pairs
+- Yellow: Final Stretch
+- Green: Migrated
+- Rounded pill design
+
+### Providers
+
+#### `src/components/providers/StoreProvider.tsx`
+Redux store provider:
+- Creates store instance once
+- Provides store to entire app
+- Uses client-side rendering
+
+#### `src/components/providers/QueryProvider.tsx`
+React Query provider:
+- Configures QueryClient
+- Sets default options (staleTime)
+- Wraps app for data fetching
+
+## Data Flow
+
+1. **Initial Load**: 
+   - `useLiveTableData` fetches from `mockData.json`
+   - Data flows to `PulseBoard`
+   - `PulseBoard` groups by status
+   - Each `TokenColumn` receives its tokens
+
+2. **Real-time Updates**:
+   - `useMockWebSocket` emits updates every second
+   - Updates dispatched to Redux (`socketSlice`)
+   - `useLiveTableData` merges updates with static data
+   - Components re-render with new data
+
+3. **User Actions**:
+   - Search: Dispatched to `tableSlice` → filters data
+   - Favorite: Dispatched to `favoritesSlice` → updates star icons
+   - Deposit: Dispatched to `walletSlice` → updates balance
+   - Trade: Creates order in `walletSlice` → updates balance
+
 ## Deployment
 
-To deploy to Vercel:
+### Vercel (Recommended)
+1. Push to GitHub (already done!)
+2. Go to [vercel.com](https://vercel.com)
+3. Import your repository
+4. Deploy (no configuration needed)
 
-1.  Push this repository to GitHub
-2.  Import the project in Vercel
-3.  Deploy! (No special configuration needed)
+### Other Platforms
+- **Netlify**: Connect GitHub repo, build command: `npm run build`
+- **Railway**: Auto-detects Next.js, deploys automatically
+- **Docker**: Use included `next.config.mjs` for standalone output
 
-## Architecture
+## Scripts
 
-- `src/components/atoms`: Basic building blocks (StatusBadge)
-- `src/components/molecules`: Complex UI components (TokenCard)
-- `src/components/organisms`: Major sections (TokenColumn, PulseBoard)
-- `src/lib/redux`: Global state management
-- `src/hooks`: Custom hooks (useLiveTableData, useMockWebSocket)
-- `src/types`: TypeScript type definitions
+```bash
+npm run dev      # Start development server (localhost:3000)
+npm run build    # Create production build
+npm start        # Start production server
+npm run lint     # Run ESLint
+```
 
-## Key Components
+## Architecture Highlights
 
-### TokenCard
-Rich card component displaying:
-- Token image and branding
-- Social media links
-- Real-time metrics (MC, Vol, Price changes)
-- Time since creation
-- Buy action button
+- **Atomic Design**: Components organized by complexity (atoms → molecules → organisms)
+- **Type Safety**: Strict TypeScript throughout
+- **State Management**: Redux for UI state, React Query for server state
+- **Performance**: Memoized components, optimized re-renders
+- **Modularity**: Each component has single responsibility
+- **Scalability**: Easy to add new token sources, columns, or features
 
-### PulseBoard
-Main container organizing tokens into 3 columns by status, with:
-- Column headers with counts
-- Scrollable card lists
-- Responsive stacking on mobile
+## Future Enhancements
+
+- Connect to real Solana blockchain
+- Integrate wallet adapters (Phantom, Solflare)
+- Real-time WebSocket connection
+- Historical price charts
+- Token swap functionality
+- Portfolio tracking
+- Price alerts
