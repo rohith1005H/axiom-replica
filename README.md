@@ -57,7 +57,7 @@ npm --version   # Should be 9.0+
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/rohith1005H/axiom-replica.git
+git clone https://github.com/litaction/axiom-replica.git
 cd axiom-replica
 ```
 
