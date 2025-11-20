@@ -2,9 +2,17 @@
 
 A pixel-perfect replica of Axiom Trade's "Pulse" token discovery board, built with Next.js 14, TypeScript, Tailwind CSS, Redux Toolkit, and React Query.
 
-![Axiom Pulse](file:///home/rohtih/.gemini/antigravity/brain/4ee66fe1-b13f-4d28-9a99-fb867a7da9ac/uploaded_image_1763594695625.png)
+## 📸 Screenshots
 
-## Features
+### Main Application
+![Axiom Pulse Interface](./public/screenshots/app-overview.png)
+*Complete 3-column board layout with navigation, token cards, and real-time updates*
+
+### Demo Video
+![Application Demo](./public/screenshots/app-demo.webp)
+*Interactive demo showing scrolling through all columns and features*
+
+## ✨ Features
 
 - **3-Column Board Layout**: Tokens organized by status (New Pairs, Final Stretch, Migrated)
 - **Rich Token Cards**: 
